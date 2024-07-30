@@ -1,0 +1,46 @@
+CODE
+Before optimization
+#include <stdio.h>
+
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int num = 5; // Input value
+    int result = factorial(num); // Calculate factorial
+    printf("Factorial of %d is %d\n", num, result); // Output result
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+After optimization
+#include <stdio.h>
+
+// Function to calculate the factorial of a number iteratively
+int factorial(int n) {
+    int result = 1;
+    while (n > 1) {
+        result *= n;
+        n--;
+    }
+    return result;
+}
+
+int main() {
+    int num = 5; // Input value
+    int result = factorial(num); // Calculate factorial
+    printf("Factorial of %d is %d\n", num, result); // Output result
+    return 0;
+}
